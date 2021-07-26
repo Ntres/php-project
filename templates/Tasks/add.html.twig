@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="/styles/add.css"/>
+{% endblock %}
+
+{% block body %}
+	<div class="body-card">
+		<h1>Añadir tarea</h1>
+		<a href="/tasks">Volver a tareas</a>
+
+		<form id="form" method="POST">
+			<label for="task">Tarea:</label><br>
+			<input type="text" name="task"><br>
+			<label for="finished">Finalizado:</label><br>
+			<input type="checkbox" name="finished" value="false"><br><br>
+			<button type="submit">Guardar</button>
+		</form>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="/styles/tasks.css"/>
+{% endblock %}
+
+{% block body %}
+	<div class="body-card">
+		<h1>Tasks</h1>
+		<a href="/addtask">Agregar tarea</a>
+		<ul>
+			{% for task in tasks %}
+				<li>{{task.task}}
+					<a href="{{path('delete', {id:task.id})}}" class="trash-icon">
+						<i class="far fa-trash-alt"></i>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}
